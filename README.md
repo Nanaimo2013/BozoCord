@@ -39,7 +39,7 @@ BozoCord is a unique communication platform developed by Nans Studio. Unlike tra
 
 ## License
 
-BozoCord is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+BozoCord is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See the [LICENSE](LICENSE) file for more details.
 
 ## Acknowledgements
 
