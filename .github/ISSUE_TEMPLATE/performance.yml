@@ -1,0 +1,35 @@
+name: 🚀 Performance Issue
+description: Report a performance problem
+title: "[PERF] "
+labels: ["performance"]
+body:
+  - type: textarea
+    attributes:
+      label: Performance Problem
+      description: Describe the performance issue
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        - OS: [e.g., Windows 11]
+        - Browser: [e.g., Chrome 91]
+        - BozoCord Version: [e.g., 1.0.0]
+        - Number of users: [e.g., 100]
+        - Database size: [e.g., 1GB]
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction Steps
+      description: How can we reproduce this issue?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Performance Metrics
+      description: Include any relevant metrics or profiling data 

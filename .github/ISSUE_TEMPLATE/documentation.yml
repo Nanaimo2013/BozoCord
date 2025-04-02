@@ -1,0 +1,32 @@
+name: 📚 Documentation
+description: Suggest improvements to our documentation
+title: "[DOCS] "
+labels: ["documentation"]
+body:
+  - type: dropdown
+    attributes:
+      label: Type
+      options:
+        - New Documentation
+        - Documentation Update
+        - Documentation Fix
+        - Translation
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Page Link
+      description: Link to the documentation page (if existing)
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: What needs to be added or changed?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Suggested Content
+      description: If you have specific content in mind, share it here 

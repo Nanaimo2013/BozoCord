@@ -1,0 +1,43 @@
+name: 🆘 Support Request
+description: Get help with using BozoCord
+title: "[SUPPORT] "
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening a support request, please check our documentation and existing issues.
+
+  - type: input
+    attributes:
+      label: BozoCord Version
+      description: What version are you using?
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Component
+      description: Which part of BozoCord needs support?
+      options:
+        - Installation
+        - Configuration
+        - Authentication
+        - Messaging
+        - Voice Chat
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Question
+      description: What do you need help with?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What I've Tried
+      description: What steps have you already taken? 

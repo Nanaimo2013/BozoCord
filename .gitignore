@@ -1,45 +1,29 @@
+# BozoCord Project .gitignore
+# Organized by project components and technologies
+
+### BozoCord.API ###
 # .NET Core
 bin/
 obj/
-*.user
-*.userosscache
-*.suo
-*.userprefs
-.vs/
-.vscode/
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
-nupkg/
-
-# Web File
-/node_modules
-
-# Visual Studio files
-.vs/
+*.dll
+*.exe
+*.pdb
 *.user
 *.userosscache
 *.sln.docstates
 *.userprefs
 
-# Rider
-.idea/
-*.sln.iml
+# API Specific
+appsettings.*.json
+!appsettings.example.json
+*.Development.json
+*.Production.json
+*.Staging.json
 
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
+### BozoCord.Core ###
 # Build results
 [Dd]ebug/
-[Dd]ebugPublic/
 [Rr]elease/
-[Rr]eleases/
 x64/
 x86/
 [Ww][Ii][Nn]32/
@@ -48,220 +32,121 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
-[Ll]og/
-[Ll]ogs/
 
-# Visual Studio cache/options directory
-.vs/
+# Core Specific
+*.Core.xml
+*.Core.json
 
-# ReSharper
-_ReSharper*/
-*.[Rr]e[Ss]harper
-*.DotSettings.user
-
-# .NET Core
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# Files built by Visual Studio
-*_i.c
-*_p.c
-*_h.h
-*.ilk
-*.meta
-*.obj
-*.iobj
-*.pch
-*.pdb
-*.ipdb
-*.pgc
-*.pgd
-*.rsp
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.tmp_proj
-*_wpftmp.csproj
-*.log
-*.vspscc
-*.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# Visual Studio profiler
-*.psess
-*.vsp
-*.vspx
-*.sap
-
-# Visual Studio Trace Files
-*.e2e
-
-# NuGet Packages
-*.nupkg
-# NuGet Symbol Packages
-*.snupkg
-# The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
-# except build/, which is used as an MSBuild target.
-!**/[Pp]ackages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
-#!**/[Pp]ackages/repositories.config
-# NuGet v3's project.json files produces more ignorable files
-*.nuget.props
-*.nuget.targets
-
-# Microsoft Azure Build Output
-csx/
-*.build.csdef
-
-# Microsoft Azure Emulator
-ecf/
-rcf/
-
-# Windows Store app package directories and files
-AppPackages/
-BundleArtifacts/
-Package.StoreAssociation.xml
-_pkginfo.txt
-*.appx
-*.appxbundle
-*.appxupload
-
-# Visual Studio cache files
-# files ending in .cache can be ignored
-*.[Cc]ache
-# but keep track of directories ending in .cache
-!?*.[Cc]ache/
-
-# Others
-ClientBin/
-~$*
-*~
-*.dbmdl
-*.dbproj.schemaview
-*.jfm
-*.pfx
-*.publishsettings
-orleans.codegen.cs
-
-# SQL Server files
+### BozoCord.Infrastructure ###
+# Database
 *.mdf
 *.ldf
 *.ndf
+*.db
+*.sqlite3
 
-# Business Intelligence projects
-*.rdl.data
-*.bim.layout
-*.bim_*.settings
-*.rptproj.rsuser
-*- [Bb]ackup.rdl
-*- [Bb]ackup ([0-9]).rdl
-*- [Bb]ackup ([0-9][0-9]).rdl
+# Infrastructure Specific
+connection.json
+*.Infrastructure.config
 
-# Microsoft Fakes
-FakesAssemblies/
+### BozoCord.Web ###
+# Next.js
+.next/
+out/
+build/
+dist/
+node_modules/
+.env*.local
+.vercel
 
-# Local History for Visual Studio
-.localhistory/
+# Web Specific
+.env.development
+.env.production
+.env.local
+*.web.config
 
-# Visual Studio History (VSHistory) files
-.vshistory/
-
-# BeatPulse healthcheck temp database
-healthchecksdb
-
-# Backup folder for Package Reference Convert tool in Visual Studio 2017
-MigrationBackup/
-
-# Ionide (cross platform F# VS Code tools) working folder
-.ionide/
-
-# Fody - auto-generated XML schema
-FodyWeavers.xsd
-
-# VS Code files for those working with multiple tools
+### Development Tools ###
+# VS Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
 
-# Local History for Visual Studio Code
-.history/
-
-# Windows Installer files from build outputs
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+_ReSharper*/
 
 # JetBrains Rider
 .idea/
 *.sln.iml
 
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+### Dependencies ###
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
-# Node.js
+# npm/yarn
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
-# React
-build/
-dist/
+### Testing ###
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 coverage/
+*.coverage
+*.coveragexml
+TestResults/
 
-# Electron
-out/
-release/
+### Documentation ###
+# Generated docs
+docs/_site/
+docs/.docusaurus
+docs/build/
+docs/node_modules/
 
-# Mobile
-*.apk
-*.aab
-*.ipa
-*.dSYM.zip
-*.dSYM
+### Misc ###
+# OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
 
 # Logs
 logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Security
+*.pfx
+*.key
+*.pem
+*.cert
+*.crt
 
-# Editor directories and files
-.idea/
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Temporary Files
+*.tmp
+*.temp
+*~
+*.swp
+*.bak
+
+
+# Other
+archive just in case

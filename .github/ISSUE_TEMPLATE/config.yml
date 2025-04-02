@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/Nanaimo2013/BozoCord/wiki
+    about: Check our documentation before creating an issue
+  - name: 💬 Discord Community
+    url: https://discord.gg/coming-soon
+    about: Ask questions and discuss with other BozoCord users
+  - name: 🐦 Twitter
+    url: https://twitter.com/Nanaimo_2013
+    about: Follow us for updates 

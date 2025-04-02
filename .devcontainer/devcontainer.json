@@ -1,0 +1,26 @@
+{
+  "name": "BozoCord Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/workspace",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "formulahendry.dotnet-test-explorer",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+
+  "forwardPorts": [5000, 5001, 5432, 6379],
+  "postCreateCommand": "dotnet restore src/BozoCord.sln"
+} 

@@ -1,42 +1,36 @@
 version: '3.8'
 
 services:
-  web:
+  api:
     build:
       context: .
-      dockerfile: BozoCord.Web/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "5000:80"
       - "5001:443"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=db;Database=BozoCord;User=sa;Password=YourStrong@Passw0rd
-      - JWT__Key=your-super-secret-key-with-minimum-32-characters
-      - JWT__Issuer=BozoCord
-      - JWT__Audience=BozoCord
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=bozocord;Username=admin;Password=adminpass
+    volumes:
+      - .:/workspace
     depends_on:
-      - db
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - postgres
 
-  db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+  postgres:
+    image: postgres:latest
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong@Passw0rd
+      POSTGRES_DB: bozocord
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpass
     ports:
-      - "1433:1433"
+      - "5432:5432"
     volumes:
-      - sqldata:/var/opt/mssql
+      - postgres_data:/var/lib/postgresql/data
 
   redis:
-    image: redis:alpine
+    image: redis:latest
     ports:
       - "6379:6379"
-    volumes:
-      - redisdata:/data
 
 volumes:
-  sqldata:
-  redisdata:
+  postgres_data:

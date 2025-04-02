@@ -1,0 +1,24 @@
+frontend:
+  - src/BozoCord.Web/**/*
+
+backend:
+  - src/BozoCord.API/**/*
+  - src/BozoCord.Core/**/*
+  - src/BozoCord.Infrastructure/**/*
+
+documentation:
+  - docs/**/*
+  - README.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+
+tests:
+  - tests/**/*
+
+ci:
+  - .github/workflows/*
+
+dependencies:
+  - '**/package.json'
+  - '**/package-lock.json'
+  - '**/*.csproj' 

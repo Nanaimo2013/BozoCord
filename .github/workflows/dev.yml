@@ -1,0 +1,46 @@
+name: Development CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: bozocord
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: adminpass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore src/BozoCord.sln
+
+    - name: Build
+      run: dotnet build src/BozoCord.sln --no-restore
+
+    - name: Test
+      run: dotnet test src/BozoCord.sln --no-build --verbosity normal
+
+    - name: Build Docker image
+      run: docker build -t bozocord-dev . 
