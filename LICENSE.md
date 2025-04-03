@@ -166,7 +166,6 @@ You agree to:
 For licensing and commercial inquiries:
 - 📧 Email: coming.soon@nansstudios.com
 - 🌐 Repository: https://github.com/Nanaimo2013/BozoCord
-- 💬 Discord: https://discord.gg/coming-soon
 - 📱 Business: [Discussions](https://github.com/Nanaimo2013/BozoCord/discussions)
 - 🔒 Security: [Security Policy](docs/SECURITY.md)
 - 📋 Terms: [Terms of Service](docs/TERMS_OF_SERVICE.md)
